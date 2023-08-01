@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const session = require('express-session')
+
 var app = express();
 
 const mongoose = require('mongoose')
@@ -20,7 +22,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'rubicamp',
+  resave: false,
+  saveUninitialized: true
+}));
+
 require('./app/routes/users.route')(app)
+require('./app/routes/oauth.route')(app)
 
 const connectToDatabase = async () => {
   try {
