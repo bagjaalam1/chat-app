@@ -7,7 +7,7 @@ import { User } from "@prisma/client";
 import Avatar from "../Avatar";
 
 interface currentUser {
-    currentUser: User
+    currentUser?: User
 }
 
 const DesktopSidebar: React.FC<currentUser> = ({
@@ -16,7 +16,8 @@ const DesktopSidebar: React.FC<currentUser> = ({
     const routes = useRoutes();
     const [isOpen, setIsOpen] = useState(false)
 
-    console.log({currentUser})
+    console.log('CURRENT USERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR')
+    console.log(currentUser)
     return (
         <div
             className="

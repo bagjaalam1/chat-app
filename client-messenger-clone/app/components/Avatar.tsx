@@ -10,6 +10,9 @@ interface AvatarProps {
 const Avatar: React.FC<AvatarProps> = ({
     user
 }) => {
+
+    console.log('INI USERRRRRRRRRRRRRRRRRR')
+    console.log(user)
     return (
         <div className="relative">
             <div
