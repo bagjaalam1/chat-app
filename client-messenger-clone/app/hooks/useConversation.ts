@@ -4,6 +4,9 @@ import { useMemo } from "react"
 const useConversation = () => {
     const params = useParams()
 
+    console.log('INI PARAMSSSSSS')
+    console.log(params)
+
     const conversationId = useMemo(() => {
         if (!params?.conversationId) {
             return ''
